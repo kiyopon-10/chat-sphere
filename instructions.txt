@@ -1,0 +1,35 @@
+1) Create a folder chat-sphere
+
+2) Create a virtual environment
+
+3) Create a django folder inside it named chatSphere
+
+4) For using environment variablesuse command pip install python-dotenv
+
+   The problem of leaving such sensitive information here in our code base is that anyone who accesses
+   our code base can then access this sensitive information.
+   For example, in this case the database username and password.
+   So once we have identified the values that need to be stored as environment variables, we can then
+   go ahead and create the configuration file or script that sets up these values for our application.
+   We do this by using the environment variable.
+   The actual variable that we set is going to be stored in the operating system and we're going to access
+   that within our application by following this type of approach.
+   It means that we're not typing in in clear text, username and passwords within our code base and therefore
+   we're providing an extra layer of security.
+   Anyone who may access our code base will not be able to view in clear text the username and passwords
+   or any other sensitive data.
+   We're going to set up our environment variables using python dot env.
+
+5) Create a file .env in the chatSphere root folder
+
+6) In the env file keep the secret key and the debug = true
+
+7) We make a couple of imports in the settings.py for accessing those environment variables and change the way of accessing
+   secret key and debug .
+
+8) We are gonna make a file called .gitignore inside the chat-sphere folder for storing things which shouldn't be tracked by
+   github. We ignore the .env because of course we don't want that in our repo. We create a file called .env-example
+   which will keep track of what information needs to present but doesn't actually keep the information.
+
+9) We are use command pip freeze > requirements.txt for creating a requirements.txt which has all the required dependencies
+   and packages recorded
