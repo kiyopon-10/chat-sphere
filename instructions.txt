@@ -26,7 +26,7 @@
 6) In the env file keep the secret key and the debug = true
 
 7) We make a couple of imports in the settings.py for accessing those environment variables and change the way of accessing
-   secret key and debug .
+   secret key and debug.
 
 8) We are gonna make a file called .gitignore inside the chat-sphere folder for storing things which shouldn't be tracked by
    github. We ignore the .env because of course we don't want that in our repo. We create a file called .env-example
@@ -34,3 +34,28 @@
 
 9) We are use command pip freeze > requirements.txt for creating a requirements.txt which has all the required dependencies
    and packages recorded
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Part 2:
+
+Chat Server Adminstraion api
+
+1) Create an app called server for handling the chat adminstraton.
+
+2) We are gonna incorporate the feature of user authentication in the app at some point, so we will start with creating a custom
+   User model. The Django documentation does recommend defining a custom user model at the beginning of the project
+   rather than using the built in user model. Now, this allows for greater flexibility and customization in terms of adding additional 
+   fields, changing the authentication method and integrating with maybe third party packages, all of which we probably want to do on 
+   this project.
+
+3) We are gonna create another app called account that will manage the users.
+
+4) In account/models.py we create a class called Account.
+
+5) We set the AUTH_USER_MODEL to the custom model we created in settings.py
+
+6) We setup databases now. We don't have an idea of what data exactly needs to be handles yet, but we start with models
+  Category, Server, Channels. There will be categories and in each category there will be multiple servers and in each
+  server there will be multiple channels where people can talk.
+

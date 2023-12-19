@@ -31,6 +31,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'server',
+    'account'
 ]
 
 MIDDLEWARE = [
@@ -115,3 +117,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = "account.Account"   #this defines the new user model
+# When we set AUTH_USER_MODEL to a custom model, we are telling Django to use that model for authentication instead of
+# the default User model.
