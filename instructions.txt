@@ -59,3 +59,11 @@ Chat Server Adminstraion api
   Category, Server, Channels. There will be categories and in each category there will be multiple servers and in each
   server there will be multiple channels where people can talk.
 
+----------------------------------------------------------------------------------------------------------------------------------
+
+Part 3:
+
+
+
+
+
