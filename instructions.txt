@@ -63,7 +63,9 @@ Chat Server Adminstraion api
 
 Part 3:
 
+1) Create a basic authentication system using the default django SessionAuthentication.
 
+2) 
 
 
 
