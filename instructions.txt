@@ -66,7 +66,7 @@ Part 3:
 1) Creating a basic authentication system using the default django SessionAuthentication.
 
 2) Creating a an api end point for getting list of all the servers and also all servers of a particular category. Creating
-   the necessary serializers in the process.
+   the necessary serializers in the process. We also make functionalities of fetching the data according to varous filters.
 
 
 
