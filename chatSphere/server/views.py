@@ -3,6 +3,8 @@ from rest_framework import viewsets
 from .models import Server
 from .serializer import ServerSerializer
 
+from django.db.models import Count
+
 from rest_framework.response import Response
 from rest_framework.exceptions import ValidationError, AuthenticationFailed
 
@@ -19,6 +21,8 @@ class ServerListViewSet(viewsets.ViewSet):
         
         by_serverId = request.query_params.get("by_serverId")
         
+        with_num_members = request.query_params.get("with_num_members") == "true"
+        
         if by_user or by_serverId and not request.user.is_authenticated:
             raise AuthenticationFailed()
         
@@ -30,6 +34,9 @@ class ServerListViewSet(viewsets.ViewSet):
         if by_user:
             user_id = request.user.id 
             self.queryset = self.queryset.filter(members = user_id)
+            
+        if with_num_members:
+            self.queryset = self.queryset.annotate(num_members = Count("members"))
         
         # for filtering results based on numbers
         if qty:
@@ -45,6 +52,6 @@ class ServerListViewSet(viewsets.ViewSet):
                     raise ValidationError(detail = "Server Value Error.")
         
             
-        serializer = ServerSerializer(self.queryset, many=True)
+        serializer = ServerSerializer(self.queryset, many=True, context = {"num_members": with_num_members})
     
         return Response(serializer.data)
