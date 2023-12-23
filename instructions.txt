@@ -68,5 +68,10 @@ Part 3:
 2) Creating a an api end point for getting list of all the servers and also all servers of a particular category. Creating
    the necessary serializers in the process. We also make functionalities of fetching the data according to varous filters.
 
+3) We use chat gpt to add a rough documentation to the view of the api end point we created.
+
+4) The docs from swagger UI has already been created but for detailed working of query parameters we add a file called schema.py
+   where we create a decorater which we add before the list method of the view we created.
+
 
 
