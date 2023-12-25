@@ -73,5 +73,10 @@ Part 3:
 4) The docs from swagger UI has already been created but for detailed working of query parameters we add a file called schema.py
    where we create a decorater which we add before the list method of the view we created.
 
+5) Next we handle storing images for image uploads - i) MEDIA_ROOT and MEDIA_URL in settings.py
+                                                     ii) urlpatters append in urls.py
+
+6) 
+
 
 
