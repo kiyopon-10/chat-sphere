@@ -76,7 +76,10 @@ Part 3:
 5) Next we handle storing images for image uploads - i) MEDIA_ROOT and MEDIA_URL in settings.py
                                                      ii) urlpatters append in urls.py
 
-6) 
+6) We add functionalities of i) deleting the previous icon when we upload a new icon for a category.
+                             ii) deleting the icon of a category when the category is deleted.
+
+7) We add validators for the image uploads. We validate the size and also the file type.
 
 
 
