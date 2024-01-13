@@ -7,7 +7,7 @@ def validate_icon_image_size(image):
         with Image.open(image) as img:
             if img.width > 70 or img.height > 70:
                 raise ValidationError(
-                    f"Th max size for the allowed dimensions of image is 70x70 - size of image you uploaded is {img.size}"
+                    f"The max size for the allowed dimensions of image is 70x70 - size of image you uploaded is {img.size}"
                 )
                 
 

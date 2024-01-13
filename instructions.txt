@@ -81,5 +81,30 @@ Part 3:
 
 7) We add validators for the image uploads. We validate the size and also the file type.
 
+----------------------------------------------------------------------------------------------------------------------------------
+
+Part 4:
+
+1) We create a react app using vite.
+
+2) We work on the initial frontend creating reusable code templates.
+
+3) Now we want to access the api from the frontend. We use axios for it. But the react port and the django port are different so
+   for django to accept requests from the frontned, we need to setup CORS.
+
+4) Creating a custom jwtIntercepter in a separate file for making axios requests.
+
+5) Also makeing a React hook (a generic function) (like useCrud) in a separate file for performing CRUD operations
+
+6) Making a Popular Channels page and create a template for listing all the popular servers and render that inside the primary draw.
+   We use the useCrud for fetching the data of servers. 
+
+7) Creating an api end point for listing all categories.
+
+8) Making an ExploreCategories page and create a template for listing all the categories and render inside the secondary draw.
+
+
+
+
 
 
