@@ -8,7 +8,7 @@ import {
     Box,
     Typography,
   } from "@mui/material";
-import useCrud from "../../hooks/useCrud";
+// import useCrud from "../../hooks/useCrud";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
 import { MEDIA_URL } from "../../config";
@@ -24,26 +24,17 @@ interface Server {
     icon: string
 }
 
+interface ServerChannelProps {
+    data: Server[]
+}
+
 type Props = {
     open: boolean
 }
 
-const PopularChannels: React.FC<Props> = ({open}) => {
+const UserServers: React.FC<Props & ServerChannelProps> = ({open, data}) => {
 
-    console.log("Hey i am from Popular channels page")
-
-    const {dataCRUD, error, isLoading, fetchData} = useCrud<Server>(
-        [], 
-        "/server/select/"
-    )
-
-    React.useEffect(()=>{
-        fetchData() 
-    },[])
-
-    React.useEffect(()=>{
-        console.log(dataCRUD)
-    }, [dataCRUD])
+    // console.log("Hey i am from Popular channels page")
 
     return <>
         <Box
@@ -56,11 +47,11 @@ const PopularChannels: React.FC<Props> = ({open}) => {
             }}
         >
             <Typography sx={{display: open? "block": "none"}}>
-                Popular
+                Servers
             </Typography>
         </Box>
         <List>
-            {dataCRUD.map((item) => (
+            {data.map((item) => (
                 <ListItem key={item.id} 
                     disablePadding
                     sx={{display: "block"}}
@@ -122,4 +113,4 @@ const PopularChannels: React.FC<Props> = ({open}) => {
     </>
 }
 
-export default PopularChannels
+export default UserServers

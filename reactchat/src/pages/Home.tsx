@@ -3,6 +3,7 @@ import PrimaryAppBar from './templates/PrimaryAppBar';
 import PrimaryDraw from './templates/PrimaryDraw';
 import SecondaryDraw from './templates/SecondaryDraw';
 import Main from './templates/Main';
+import ExploreServers from '../components/Main/ExploreServers';
 import PopularChannels from '../components/PrimaryDraw/PopularChannels';
 import ExploreCategories from '../components/SecondaryDraw/ExploreCategories';
 
@@ -17,7 +18,9 @@ const Home = () => {
             <SecondaryDraw>
                 <ExploreCategories/>
             </SecondaryDraw>
-            <Main/>
+            <Main>
+                <ExploreServers/>
+            </Main>
         </Box>
     )
     

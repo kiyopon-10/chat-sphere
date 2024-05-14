@@ -1,9 +1,11 @@
 import React from 'react';
-import {AppBar, Toolbar, Typography, Box, IconButton, Drawer, useMediaQuery} from '@mui/material';
+import {AppBar, Toolbar, Typography, Box, IconButton, Drawer, useMediaQuery, toggleButtonClasses} from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
+import ExploreCategories from '../../components/SecondaryDraw/ExploreCategories';
 
 import MenuIcon from '@mui/icons-material/Menu';
+import AccountButton from '../../components/PrimaryAppBar/AccountButton';
 
 const PrimaryAppBar = () => {
 
@@ -24,6 +26,12 @@ const PrimaryAppBar = () => {
             setSideMenu(false)
         }
     }, [isSmallScreen])
+
+    // const list = () => {
+    //     <Box sx={{paddingTop: `${theme.primaryAppBar.height}px`, minWidth: 200}} onClick={toggleDrawer(false)}>
+    //         <ExploreCategories/>
+    //     </Box>
+    // }
     
     return(
         <AppBar 
@@ -47,11 +55,9 @@ const PrimaryAppBar = () => {
                 </Box>
 
                 <Drawer anchor="left" open={sideMenu} onClose={toggleDrawer(false)}>
-                    {[...Array(100)].map((_, i) => (
-                        <Typography key={i} paragraph>
-                            {i+1}
-                        </Typography>
-                    ))}
+                    <Box sx={{paddingTop: `${theme.primaryAppBar.height}px`, minWidth: 200}} onClick={toggleDrawer(false)}>
+                        <ExploreCategories/>
+                    </Box>
                 </Drawer>
 
                 <Link to="/" color="inherit" style={{ textDecoration: 'none' }}> 
@@ -60,7 +66,9 @@ const PrimaryAppBar = () => {
                     >
                         CHAT-SPHERE
                     </Typography>
-                </Link> 
+                </Link>
+                <Box sx={{ flexGrow: 1 }}></Box>
+                <AccountButton />
             </Toolbar>
         </AppBar>
     )
